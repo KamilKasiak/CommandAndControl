@@ -4,7 +4,7 @@ HOST = "0.0.0.0"
 PORT = 443
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-    s.bind(HOST, PORT)
+    s.bind((HOST, PORT))
     s.listen()
 
     #loop for accepting the connection
@@ -24,3 +24,4 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             # receive output from a client
             cmdOutput = conn.recv(1024)
             print(cmdOutput)
+
